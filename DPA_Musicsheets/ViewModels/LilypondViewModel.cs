@@ -10,6 +10,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Input;
 
 namespace DPA_Musicsheets.ViewModels {
@@ -144,6 +145,14 @@ namespace DPA_Musicsheets.ViewModels {
             this._cursorLocation = (args.OriginalSource as System.Windows.Controls.TextBox).SelectionStart;
         });
         #endregion
+
+        private void TextBox_SourceUpdated(object sender, DataTransferEventArgs e) {
+            var txtBx = sender as TextBox;
+            txtBx.CaretIndex = LilypondText.Length - 1;
+            //if (txtBx == null || txtBx.Text == null) return;
+            ////if (txtBx.CaretIndex == 2 || txtBx.CaretIndex == 5) {
+            //    txtBx.CaretIndex = txtBx = txtBx.Text.Length - 1
+        }
 
         #region functions
         public void LilyPondTextChangedFunc() {

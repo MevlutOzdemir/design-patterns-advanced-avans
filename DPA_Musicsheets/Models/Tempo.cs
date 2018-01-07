@@ -8,16 +8,14 @@ using System.Threading.Tasks;
 namespace DPA_Musicsheets.Models {
     class Tempo : IMusicSymbol {
 
-        public int Temp { set; get; }
-        public int NootLength { set; get; }
+        private int _bpm;
 
-        public Tempo(int temp, int nootLength) {
-            this.Temp = temp;
-            this.NootLength = nootLength;
+        public Tempo(int _bpm) {
+            this._bpm = _bpm;
         }
 
         public string ToText() {
-            return $"\\tempo {NootLength}={Temp}";
+            return $"\\tempo 4={_bpm}";
         }
     }
 }

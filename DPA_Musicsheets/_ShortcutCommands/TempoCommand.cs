@@ -16,7 +16,7 @@ namespace DPA_Musicsheets._Shortcuts {
         }
 
         protected override void Execute() {
-            var tempo = new Tempo(120, 4);
+            var tempo = new Tempo(120);
             var text = tempo.ToText() + " ";
             FileHandler.AddText(text);
         }

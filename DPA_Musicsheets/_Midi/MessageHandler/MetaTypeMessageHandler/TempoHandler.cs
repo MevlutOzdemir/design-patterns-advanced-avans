@@ -17,7 +17,7 @@ namespace DPA_Musicsheets.Midi.MessageHandler.MetaTypeMessageHandler {
             int tempo = (bytes[0] & 0xff) << 16 | (bytes[1] & 0xff) << 8 | (bytes[2] & 0xff);
             int _bpm = 60000000 / tempo;
 
-            Tempo tempoObject = new Tempo(_bpm, 4);
+            Tempo tempoObject = new Tempo(120);
             context.MusicSheet.AddMusicSymbol(tempoObject);
         }
     }

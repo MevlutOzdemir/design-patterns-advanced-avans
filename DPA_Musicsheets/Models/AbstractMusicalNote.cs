@@ -14,7 +14,7 @@ namespace DPA_Musicsheets.Models {
         public double Duration { get; set; }
         public int Dots { get; set; }
         public int Commas { get; set; }
-        public int Apostrophe { get; set; }
+        public int Apostrophes { get; set; }
 
 
     }

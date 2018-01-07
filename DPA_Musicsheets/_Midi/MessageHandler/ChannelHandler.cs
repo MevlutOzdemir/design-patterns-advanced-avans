@@ -69,7 +69,7 @@ namespace DPA_Musicsheets.Midi.MessageHandler {
             }
 
             while (distance > 6) {
-                note.Apostrophe += 1;
+                note.Apostrophes += 1;
                 distance -= 8;
             }
         }

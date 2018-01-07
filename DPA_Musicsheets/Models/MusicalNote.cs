@@ -16,7 +16,7 @@ namespace DPA_Musicsheets.Models {
         public string ToText() {       
             var punten = GenerateString(Dots, ".");
             var kommas = GenerateString(Commas, ",");
-            var apostrof = GenerateString(Apostrophe, "'");
+            var apostrof = GenerateString(Apostrophes, "'");
 
             return this.NoteName + kommas + apostrof + this.Duration + punten;
         }
