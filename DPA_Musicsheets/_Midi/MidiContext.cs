@@ -23,7 +23,6 @@ namespace DPA_Musicsheets.Midi {
         public TimeSignature CurrentTimeSignature { get; set; }
         public MusicSheet MusicSheet { get; set; }
         public Sequence Sequence { get; set; }
-        //public MidiEvent NextEvent { get; set; } // not used
         public MusicalNote Note { get; set; }
 
         public MidiContext() {

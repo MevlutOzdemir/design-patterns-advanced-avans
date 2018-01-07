@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DPA_Musicsheets {
+
     public interface IMidiFacade {
 
         MusicSheet LoadMidi(string path);

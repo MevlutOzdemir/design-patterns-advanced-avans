@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 namespace DPA_Musicsheets.FileReaders {
 
     public interface IFileReader {
+
         MusicSheet ReadFile(string path);
+
     }
 
 }

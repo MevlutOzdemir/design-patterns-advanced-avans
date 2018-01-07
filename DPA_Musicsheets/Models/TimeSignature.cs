@@ -9,10 +9,10 @@ namespace DPA_Musicsheets.Models {
 
     class TimeSignature : IMusicSymbol {
 
-        public int[] timeSignature = new int[2];
+        private int[] _timeSignature;
 
         public TimeSignature(int[] timeSignature) {
-            this.timeSignature = timeSignature;
+            this._timeSignature = timeSignature;
         }
 
 
@@ -21,7 +21,7 @@ namespace DPA_Musicsheets.Models {
         public string ToText() {
             // 0 = no of beats in bar
             // 1 = type of note
-            return $"\\time {timeSignature[0]}/{timeSignature[1]}";
+            return $"\\time {_timeSignature[0]}/{_timeSignature[1]}";
         }
     }
 }

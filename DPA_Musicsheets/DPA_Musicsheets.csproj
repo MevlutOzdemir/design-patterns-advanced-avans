@@ -131,7 +131,6 @@
     <Compile Include="_ShortcutCommands\BarlineCommand.cs" />
     <Compile Include="_ShortcutCommands\BaseCommand.cs" />
     <Compile Include="_ShortcutCommands\ClefTrebleCommand.cs" />
-    <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="_ShortcutCommands\IShortcutCommand.cs" />
     <Compile Include="_ShortcutCommands\OpenFileCommand.cs" />
     <Compile Include="_ShortcutCommands\SaveAsLilypondCommand.cs" />

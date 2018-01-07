@@ -13,9 +13,6 @@ namespace DPA_Musicsheets.Midi.MessageHandler {
         private MidiContext context;
         private String[] noteLookup = { "c", "cis", "d", "dis", "e", "f", "fis", "g", "gis", "a", "ais", "b" };
 
-        public ChannelHandler() {
-        }
-
         public void handle(MidiContext context, MidiEvent midiEvent) {
             this.context = context;
             this.musicSheet = context.MusicSheet;
@@ -163,12 +160,6 @@ namespace DPA_Musicsheets.Midi.MessageHandler {
             }
 
             return 2;
-
-            //if (noteLength > 16) return 32;
-            //if (noteLength > 8) return 16;
-            //if (noteLength > 4) return 8;
-            //if (noteLength > 2) return 4;
-            //return 2;
         }
 
         private int CalculateNoteDots(int duration, int noteLength, int subtractDuration) {
