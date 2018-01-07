@@ -146,14 +146,6 @@ namespace DPA_Musicsheets.ViewModels {
         });
         #endregion
 
-        private void TextBox_SourceUpdated(object sender, DataTransferEventArgs e) {
-            var txtBx = sender as TextBox;
-            txtBx.CaretIndex = LilypondText.Length - 1;
-            //if (txtBx == null || txtBx.Text == null) return;
-            ////if (txtBx.CaretIndex == 2 || txtBx.CaretIndex == 5) {
-            //    txtBx.CaretIndex = txtBx = txtBx.Text.Length - 1
-        }
-
         #region functions
         public void LilyPondTextChangedFunc() {
             _fileHandler.LilypondTextChanged += (src, e) => {
