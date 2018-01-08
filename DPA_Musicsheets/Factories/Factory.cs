@@ -18,6 +18,10 @@ namespace DPA_Musicsheets.Factories {
         }
 
         public T Get(string type) {
+            if(type == null) {
+                return null;
+            }
+
             if (table.TryGetValue(type, out var t)) {
                 return (T)Activator.CreateInstance(t);
             }

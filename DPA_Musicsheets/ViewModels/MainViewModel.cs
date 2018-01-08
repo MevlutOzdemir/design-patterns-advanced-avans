@@ -54,6 +54,11 @@ namespace DPA_Musicsheets.ViewModels {
             }
         });
 
+
+        public ICommand InsertCommand => new RelayCommand<string>((command) => {
+            _fileHandler.State.Execute(command);
+        });
+
         public ICommand LoadCommand => new RelayCommand(() => {
             _fileHandler.OpenFile(FileName);
         });

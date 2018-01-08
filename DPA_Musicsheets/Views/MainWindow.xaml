@@ -7,21 +7,31 @@
         xmlns:PSAMWPFControl="clr-namespace:PSAMWPFControlLibrary;assembly=PSAMWPFControlLibrary"
         Title="DPA Musicsheets" Height="700" Width="1200"
         DataContext="{Binding MainViewModel, Source={StaticResource Locator}}">
+
+
+    <Window.CommandBindings>
+        <CommandBinding Command="New" />
+    </Window.CommandBindings>
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Closing" >
             <command:EventToCommand Command="{Binding OnWindowClosingCommand}" PassEventArgsToCommand="True"  />
         </i:EventTrigger>
     </i:Interaction.Triggers>
+
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="30" />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="350" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="55*" />
+            <ColumnDefinition Width="787*"/>
         </Grid.ColumnDefinitions>
+        
         <i:Interaction.Triggers>
             <i:EventTrigger EventName="LostFocus" >
                 <command:EventToCommand Command="{Binding OnLostFocusCommand}" PassEventArgsToCommand="True"  />
@@ -33,14 +43,29 @@
                 <command:EventToCommand Command="{Binding OnKeyUpCommand}" PassEventArgsToCommand="True"  />
             </i:EventTrigger>
         </i:Interaction.Triggers>
-        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2">
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="3">
+            <DockPanel >
+                <Menu DockPanel.Dock="Top" Width="1200">
+                    <MenuItem Header="Insert commands">
+                        <MenuItem  Command="{ Binding InsertCommand }" CommandParameter="LeftAltB" Header="Insert Barline" InputGestureText="Alt+B" />
+                        <MenuItem  Command="{ Binding InsertCommand }" CommandParameter="LeftAltC" Header="Insert Clef" InputGestureText="Alt+C" />
+                        <MenuItem  Command="{ Binding InsertCommand }" CommandParameter="LeftAltS" Header="Insert Tempo" InputGestureText="Alt+S" />
+                        <MenuItem  Command="{ Binding InsertCommand }" CommandParameter="LeftAltT4" Header="Insert Time 4/4" InputGestureText="Alt+T" />
+                        <MenuItem  Command="{ Binding InsertCommand }" CommandParameter="LeftAltT3" Header="Insert Time 3/4" InputGestureText="Alt+T+3" />
+                        <MenuItem  Command="{ Binding InsertCommand }" CommandParameter="LeftAltT4" Header="Insert Time 4/4" InputGestureText="Alt+T+4" />
+                        <MenuItem  Command="{ Binding InsertCommand }" CommandParameter="LeftAltT6" Header="Insert Time 6/8" InputGestureText="Alt+T+6" />
+                    </MenuItem>
+                </Menu>
+            </DockPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="3">
             <Button Command="{Binding OpenFileCommand}" Content="Open" Margin="5" Width="75"/>
             <TextBox IsReadOnly="True" TextWrapping="Wrap" Text="{Binding FileName}" Width="400" Margin="5"/>
             <Button Command="{Binding LoadCommand}" Width="75" Content="Load" Margin="5"/>
             <local:MidiPlayerCtrl Margin="5" Grid.Row="2" Grid.Column="1"/>
         </StackPanel>
-        <local:LilypondViewerCtrl Margin="5" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2"/>
-        <Label Content="{Binding CurrentState, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch"/>
-        <local:StaffViewerCtrl Margin="5" Grid.Row="2" Grid.Column="1"/>
+        <local:LilypondViewerCtrl Margin="5" Grid.Row="2" Grid.Column="0" Grid.RowSpan="2"/>
+        <Label Content="{Binding CurrentState, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Grid.ColumnSpan="2"/>
+        <local:StaffViewerCtrl Margin="5" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>
