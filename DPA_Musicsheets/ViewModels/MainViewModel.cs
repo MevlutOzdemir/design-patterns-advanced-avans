@@ -55,7 +55,7 @@ namespace DPA_Musicsheets.ViewModels {
         });
 
 
-        public ICommand InsertCommand => new RelayCommand<string>((command) => {
+        public ICommand ShortcutCommands => new RelayCommand<string>((command) => {
             _fileHandler.State.Execute(command);
         });
 

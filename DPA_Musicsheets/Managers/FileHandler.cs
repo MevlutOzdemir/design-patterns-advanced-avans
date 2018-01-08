@@ -64,8 +64,8 @@ namespace DPA_Musicsheets.Managers {
             IFileReader reader = new FileReaderFactory().Get(extension);
            
             var musicSheet = reader.ReadFile(path);
-            var symbolString = musicSheet.SymbolsContent.ToString();
-            LoadLilypond(symbolString);
+            var content = musicSheet.SymbolsContent.ToString();
+            LoadLilypond(content);
 
             this.State = new MusicEditingState(this);
         }

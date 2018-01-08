@@ -31,7 +31,7 @@
             <ColumnDefinition Width="55*" />
             <ColumnDefinition Width="787*"/>
         </Grid.ColumnDefinitions>
-        
+
         <i:Interaction.Triggers>
             <i:EventTrigger EventName="LostFocus" >
                 <command:EventToCommand Command="{Binding OnLostFocusCommand}" PassEventArgsToCommand="True"  />
@@ -46,14 +46,21 @@
         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="3">
             <DockPanel >
                 <Menu DockPanel.Dock="Top" Width="1200">
-                    <MenuItem Header="Insert commands">
-                        <MenuItem  Command="{ Binding InsertCommand }" CommandParameter="LeftAltB" Header="Insert Barline" InputGestureText="Alt+B" />
-                        <MenuItem  Command="{ Binding InsertCommand }" CommandParameter="LeftAltC" Header="Insert Clef" InputGestureText="Alt+C" />
-                        <MenuItem  Command="{ Binding InsertCommand }" CommandParameter="LeftAltS" Header="Insert Tempo" InputGestureText="Alt+S" />
-                        <MenuItem  Command="{ Binding InsertCommand }" CommandParameter="LeftAltT4" Header="Insert Time 4/4" InputGestureText="Alt+T" />
-                        <MenuItem  Command="{ Binding InsertCommand }" CommandParameter="LeftAltT3" Header="Insert Time 3/4" InputGestureText="Alt+T+3" />
-                        <MenuItem  Command="{ Binding InsertCommand }" CommandParameter="LeftAltT4" Header="Insert Time 4/4" InputGestureText="Alt+T+4" />
-                        <MenuItem  Command="{ Binding InsertCommand }" CommandParameter="LeftAltT6" Header="Insert Time 6/8" InputGestureText="Alt+T+6" />
+                    <MenuItem Header="Open">
+                        <MenuItem  Command="{ Binding ShortcutCommands }" CommandParameter="LeftCtrlO" Header="Open new file" InputGestureText="Ctrl+O" />
+                    </MenuItem>
+                    <MenuItem Header="Save">
+                        <MenuItem  Command="{ Binding ShortcutCommands }" CommandParameter="LeftCtrlS" Header="Save as Lilypond" InputGestureText="Ctrl+S" />
+                        <MenuItem  Command="{ Binding ShortcutCommands }" CommandParameter="LeftCtrlSP" Header="Save as PDF" InputGestureText="Ctrl+S+P" />
+                    </MenuItem>
+                    <MenuItem Header="Insert">
+                        <MenuItem  Command="{ Binding ShortcutCommands }" CommandParameter="LeftAltB" Header="Insert Barline" InputGestureText="Alt+B" />
+                        <MenuItem  Command="{ Binding ShortcutCommands }" CommandParameter="LeftAltC" Header="Insert Clef" InputGestureText="Alt+C" />
+                        <MenuItem  Command="{ Binding ShortcutCommands }" CommandParameter="LeftAltS" Header="Insert Tempo" InputGestureText="Alt+S" />
+                        <MenuItem  Command="{ Binding ShortcutCommands }" CommandParameter="LeftAltT4" Header="Insert Time 4/4" InputGestureText="Alt+T" />
+                        <MenuItem  Command="{ Binding ShortcutCommands }" CommandParameter="LeftAltT3" Header="Insert Time 3/4" InputGestureText="Alt+T+3" />
+                        <MenuItem  Command="{ Binding ShortcutCommands }" CommandParameter="LeftAltT4" Header="Insert Time 4/4" InputGestureText="Alt+T+4" />
+                        <MenuItem  Command="{ Binding ShortcutCommands }" CommandParameter="LeftAltT6" Header="Insert Time 6/8" InputGestureText="Alt+T+6" />
                     </MenuItem>
                 </Menu>
             </DockPanel>
